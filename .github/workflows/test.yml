@@ -14,6 +14,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_URL: postgresql://user:password@localhost:5432/test_db
+
     services:
       postgres:
         image: postgres:15
@@ -39,8 +42,6 @@ jobs:
           cache: 'pip' # Built-in caching is much more stable than manual actions/cache
 
       - name: Install dependencies
-        env:
-          DATABASE_URL: postgresql://user:password@localhost:5432/mytestdb
         run: |
           python -m venv venv
           source venv/bin/activate

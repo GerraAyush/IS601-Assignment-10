@@ -145,7 +145,7 @@ def seed_users(db_session: Session, request) -> List[User]:
 
 @pytest.fixture(scope="session")
 def fastapi_server():
-    server_url = 'http://127.0.0.1:8001/'
+    server_url = 'http://127.0.0.1:8000/'
     logger.info("Starting test server...")
 
     try:
